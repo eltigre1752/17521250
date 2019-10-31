@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="baitap3.ThemHoa">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label      Text="Mã Loại"   Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+        <Label      Text="Tên Hoa"   Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+        <Label      Text="Hình"      Grid.Column="0" Grid.Row="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+        <Label      Text="Giá bán"   Grid.Column="0" Grid.Row="3" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+        <Label      Text="Mô tả"     Grid.Column="0" Grid.Row="4" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+
+        <Picker     x:Name="TypePicker" Title="Chọn loại hoa" 
+                    ItemDisplayBinding="{Binding TenLoai}" SelectedIndex="{Binding MaLoai}"                 
+                    Grid.Column="1" Grid.Row="0"/>
+        <Entry      x:Name="TenHoa" Grid.Column="1" Grid.Row="1"/>
+        <Entry      x:Name="Hinh" Grid.Column="1" Grid.Row="2"/>
+        <Entry      x:Name="DonGia" Grid.Column="1" Grid.Row="3"/>
+        <Editor     x:Name="MoTa" Grid.Column="1" Grid.Row="4"/>
+
+        <Button     x:Name="cmd_Them" 
+                    Text="THÊM HOA"  Grid.Column="0" Grid.Row="5" 
+                    Clicked="cmd_Them_Clicked"  Margin="10,30,10,30"/>
+        <Button     x:Name="cmd_Xoa" 
+                    Text="XÓA HOA"  Grid.Column="1" Grid.Row="5" 
+                    Clicked="cmd_Xoa_Clicked"  Margin="10,30,10,30"/>
+    </Grid>
+    
+</ContentPage>
